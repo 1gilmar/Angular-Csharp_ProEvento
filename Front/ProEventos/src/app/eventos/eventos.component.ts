@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { error } from 'protractor';
 
 @Component({
   selector: 'app-eventos',
@@ -18,24 +17,9 @@ export class EventosComponent implements OnInit {
   }
 
   getEventos(): void {
-    this.http.get('http://endereco_da_api').subscribe(
+    this.http.get('https://localhost:5001/api/Evento').subscribe(
       response => this.eventos = response,
       error => console.log(error)
     )
-
-    // this.eventos = [
-    //   {
-    //     tema: "Angular",
-    //     local: "Goias"
-    //   },
-    //   {
-    //     tema: ".Net",
-    //     local: "Tocantins"
-    //   },
-    //   {
-    //     tema: "C#",
-    //     local: "Brasilia"
-    //   }
-    // ]
   }
 }
