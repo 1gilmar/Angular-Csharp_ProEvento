@@ -1,8 +1,43 @@
-<h1>Componentes de eventos</h1>
+<h1>Eventos</h1>
+<hr>
 
-<div *ngFor="let evento of eventos">
-  <strong>Tema:</strong> {{evento.tema}}
-  <br>
-  <strong>Local</strong> {{evento.local}}
-  <hr>
-</div>
+<!-- form.form-inline>form-group.mb-2 -->
+<form action="" class="form-inline">
+  <div class="form-group mb-2">
+    <!-- input.form-control.mr2[placeholder=buscar] -->
+    <input type="text" class="form-control mr2" placeholder="buscar">
+
+    <!-- btn.btn.btn-outline-success -->
+    <button class="btn btn-outline-success">Buscar</button>
+
+  </div>
+</form>
+
+<!-- table.table.table-striped>(thead.thead-dark>tr>th*8) -->
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>Image</th>
+      <th>Tema</th>
+      <th>Local</th>
+      <th>Data</th>
+      <th>Qtd Pessoas</th>
+      <th>Lote</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <!-- tbody>tr>td*8 -->
+  <tbody>
+    <tr *ngFor="let evento of eventos" >
+      <td>{{evento.eventoId}}</td>
+      <td>{{evento.imageURL}}</td>
+      <td>{{evento.tema}}</td>
+      <td>{{evento.local}}</td>
+      <td>{{evento.dataEvento}}</td>
+      <td>{{evento.qtdPessoas}}</td>
+      <td>{{evento.lote}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
