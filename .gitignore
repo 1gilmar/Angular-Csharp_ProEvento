@@ -491,3 +491,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+#arquivos de teste
+ExemploController.cs
