@@ -28,7 +28,7 @@
     </tr>
   </thead>
   <!-- tbody>tr>td*8 -->
-  <tbody>
+  <tbody *ngIf="eventos && eventos.length " >
     <tr *ngFor="let evento of eventos" >
       <td>{{evento.eventoId}}</td>
       <td>{{evento.imageURL}}</td>
@@ -40,4 +40,21 @@
       <td></td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="8" class="text-center" *ngIf="!eventos.length">
+        Nenhum evento encontrado.
+      </td>
+    </tr>
+  </tfoot>
 </table>
+
+
+<hr>
+So para testar o filtro json
+<div >
+  {{ eventos | json}}
+
+</div>
+
+
