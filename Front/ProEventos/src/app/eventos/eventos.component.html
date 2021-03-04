@@ -9,12 +9,11 @@
     [(ngModel)]="filtroLista">
 
     <!-- btn.btn.btn-outline-success -->
-    <button class="btn btn-outline-success">Buscar</button>
 
   </div>
 </div>
 
-filtro: {{filtroLista }}
+<!-- filtro: {{ eventosFiltrador | json }} -->
 
 <!-- table.table.table-striped>(thead.thead-dark>tr>th*8) -->
 <table class="table table-striped">
@@ -22,7 +21,7 @@ filtro: {{filtroLista }}
     <tr>
       <th>
         <button class="btn btn-outline-success btn-sm" (click)="alterarImagem()">
-          {{!exibirImagem ? "exibir" : "ocultar"}}
+          {{!exibirImagem ? "Exibir imagens" : "Ocultar imagens"}}
         </button>
       </th>
       <th>#</th>
@@ -36,7 +35,7 @@ filtro: {{filtroLista }}
   </thead>
   <!-- tbody>tr>td*8 -->
   <tbody *ngIf="eventos && eventos.length ">
-    <tr *ngFor="let evento of eventos">
+    <tr *ngFor="let evento of eventosFiltrador">
       <td>
         <!-- posso usar o *ngIf ao inves do collapse -->
         <img [collapse]="!exibirImagem" [isAnimated]="true" src="assets/{{evento.imageURL}}"
@@ -48,7 +47,10 @@ filtro: {{filtroLista }}
       <td>{{evento.dataEvento}}</td>
       <td>{{evento.qtdPessoas}}</td>
       <td>{{evento.lote}}</td>
-      <td></td>
+      <td>
+        <button type="button" class="btn btn-primary btn-sm mr-2">editar</button>
+        <button type="button" class="btn btn-danger btn-sm">deletar</button>
+      </td>
     </tr>
   </tbody>
   <tfoot>
