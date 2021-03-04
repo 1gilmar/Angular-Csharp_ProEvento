@@ -2,16 +2,19 @@
 <hr>
 
 <!-- form.form-inline>form-group.mb-2 -->
-<form action="" class="form-inline">
+<div class="form-inline">
   <div class="form-group mb-2">
     <!-- input.form-control.mr2[placeholder=buscar] -->
-    <input type="text" class="form-control mr2" placeholder="buscar">
+    <input type="text" class="form-control mr-2" placeholder="buscar"
+    [(ngModel)]="filtroLista">
 
     <!-- btn.btn.btn-outline-success -->
     <button class="btn btn-outline-success">Buscar</button>
 
   </div>
-</form>
+</div>
+
+filtro: {{filtroLista }}
 
 <!-- table.table.table-striped>(thead.thead-dark>tr>th*8) -->
 <table class="table table-striped">
@@ -32,15 +35,12 @@
     </tr>
   </thead>
   <!-- tbody>tr>td*8 -->
-  <tbody *ngIf="eventos && eventos.length " >
-    <tr *ngFor="let evento of eventos" >
-      <td >
+  <tbody *ngIf="eventos && eventos.length ">
+    <tr *ngFor="let evento of eventos">
+      <td>
         <!-- posso usar o *ngIf ao inves do collapse -->
-        <img [collapse]="!exibirImagem"
-        [isAnimated]= "true"
-        src="assets/{{evento.imageURL}}"
-        [style.width.px] = "larguraImagem"
-        [style.margin.px] = "margemImagem" >
+        <img [collapse]="!exibirImagem" [isAnimated]="true" src="assets/{{evento.imageURL}}"
+          [style.width.px]="larguraImagem" [style.margin.px]="margemImagem">
       </td>
       <td>{{evento.eventoId}}</td>
       <td>{{evento.tema}}</td>
@@ -59,13 +59,4 @@
     </tr>
   </tfoot>
 </table>
-
-
-<hr>
-So para testar o filtro json
-<div >
-  {{ eventos | json}}
-
-</div>
-
 
