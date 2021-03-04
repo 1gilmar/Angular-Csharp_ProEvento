@@ -17,8 +17,12 @@
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
+      <th>
+        <button class="btn btn-outline-success btn-sm" (click)="alterarImagem()">
+          {{!exibirImagem ? "exibir" : "ocultar"}}
+        </button>
+      </th>
       <th>#</th>
-      <th>Image</th>
       <th>Tema</th>
       <th>Local</th>
       <th>Data</th>
@@ -30,10 +34,15 @@
   <!-- tbody>tr>td*8 -->
   <tbody *ngIf="eventos && eventos.length " >
     <tr *ngFor="let evento of eventos" >
-      <td>{{evento.eventoId}}</td>
-      <td>
-        <img src="assets/{{evento.imageURL}}" [style.width.px]= widthImg >
+      <td >
+        <!-- posso usar o *ngIf ao inves do collapse -->
+        <img [collapse]="!exibirImagem"
+        [isAnimated]= "true"
+        src="assets/{{evento.imageURL}}"
+        [style.width.px] = "larguraImagem"
+        [style.margin.px] = "margemImagem" >
       </td>
+      <td>{{evento.eventoId}}</td>
       <td>{{evento.tema}}</td>
       <td>{{evento.local}}</td>
       <td>{{evento.dataEvento}}</td>
