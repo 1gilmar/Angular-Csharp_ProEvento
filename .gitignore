@@ -92,9 +92,6 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
-*.db
-*.db-shm
-*.db-wal
 
 # Chutzpah Test files
 _Chutzpah*
@@ -495,3 +492,8 @@ Thumbs.db
 
 #arquivos de teste
 ExemploController.cs
+
+#banco de dados
+*.db
+*.db-shm
+*.db-wal
