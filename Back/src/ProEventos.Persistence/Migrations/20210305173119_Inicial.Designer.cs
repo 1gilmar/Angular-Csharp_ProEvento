@@ -9,7 +9,7 @@ using ProEventos.Persistence;
 namespace ProEventos.Persistence.Migrations
 {
     [DbContext(typeof(ProEventosContext))]
-    [Migration("20210305171815_Inicial")]
+    [Migration("20210305173119_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -135,9 +135,6 @@ namespace ProEventos.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("PalestranteId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("PalestrantesId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("URL")
