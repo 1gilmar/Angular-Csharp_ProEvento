@@ -1,5 +1,6 @@
 using System;
 
+//lote pertence a um evento
 namespace ProEventos.Domain
 {
     public class Lote

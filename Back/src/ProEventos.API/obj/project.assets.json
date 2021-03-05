@@ -505,6 +505,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.3",
           "ProEventos.Domain": "1.0.0"
         },
         "compile": {
