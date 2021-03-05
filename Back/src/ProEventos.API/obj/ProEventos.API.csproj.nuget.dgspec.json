@@ -25,7 +25,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Application/ProEventos.Application.csproj": {
+                "projectPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Application/ProEventos.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -77,6 +81,173 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Application/ProEventos.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Application/ProEventos.Application.csproj",
+        "projectName": "ProEventos.Application",
+        "projectPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Application/ProEventos.Application.csproj",
+        "packagesPath": "/Users/gilmarborges/.nuget/packages/",
+        "outputPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gilmarborges/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Domain/ProEventos.Domain.csproj": {
+                "projectPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Domain/ProEventos.Domain.csproj"
+              },
+              "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Persistence/ProEventos.Persistence.csproj": {
+                "projectPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Persistence/ProEventos.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Domain/ProEventos.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Domain/ProEventos.Domain.csproj",
+        "projectName": "ProEventos.Domain",
+        "projectPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Domain/ProEventos.Domain.csproj",
+        "packagesPath": "/Users/gilmarborges/.nuget/packages/",
+        "outputPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gilmarborges/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Persistence/ProEventos.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Persistence/ProEventos.Persistence.csproj",
+        "projectName": "ProEventos.Persistence",
+        "projectPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Persistence/ProEventos.Persistence.csproj",
+        "packagesPath": "/Users/gilmarborges/.nuget/packages/",
+        "outputPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gilmarborges/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Domain/ProEventos.Domain.csproj": {
+                "projectPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.Domain/ProEventos.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
