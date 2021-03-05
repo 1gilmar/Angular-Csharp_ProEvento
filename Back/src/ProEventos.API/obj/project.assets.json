@@ -5,7 +5,7 @@
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/Humanizer.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {}
@@ -506,6 +506,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.3",
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.3",
           "ProEventos.Domain": "1.0.0"
         },
         "compile": {
