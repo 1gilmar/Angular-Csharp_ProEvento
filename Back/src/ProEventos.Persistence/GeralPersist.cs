@@ -14,7 +14,7 @@ namespace ProEventos.Persistence
 
         public GeralPersist(ProEventosContext context)
         {
-            this._context = context;
+            _context = context;
 
         }
         public void Add<T>(T entity) where T : class

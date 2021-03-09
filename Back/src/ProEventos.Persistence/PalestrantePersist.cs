@@ -51,11 +51,11 @@ namespace ProEventos.Persistence
 
         }
 
-        public async Task<Palestrante> GetPalestranteByIdAsync(int PalestrantesId, bool includeEventos)
+        public async Task<Palestrante> GetPalestranteByIdAsync(int palestrantesId, bool includeEventos)
         {
             IQueryable<Palestrante> query = _context.Palestrantes.Include(p => p.RedesSociais);
 
-            query = query.OrderBy(p => p.Id).Where(p => p.Id == PalestrantesId);
+            query = query.OrderBy(p => p.Id).Where(p => p.Id == palestrantesId);
 
             return await query.FirstOrDefaultAsync();
         }
