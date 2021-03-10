@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7AVgCAJVYGJQ/r8Ric8YVm8YOcpgEF5q4nJH748UvazWpen6ZrxuaeCFiKzkdKLFYjXKfw2lCndmp0qJju+6Yw==",
+  "dgSpecHash": "XB51XwCRmKzP+q5YPlANZRtV5CItLvd1jdXO7nQtjsI7VldzauXVYVf91UYuZntfEtIncKpgCkgP3NnNEOp1qw==",
   "success": true,
   "projectFilePath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.API/ProEventos.API.csproj",
   "expectedPackageFiles": [

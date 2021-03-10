@@ -1360,7 +1360,7 @@
       "outputPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/gilmarborges/.nuget/NuGet/NuGet.Config"
+        "/Users/gilmarborges/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
