@@ -25,3 +25,47 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## PARA RODAR O PROJETO \
+/ProEvento/Back/src/ProEventos.API 
+>dotnet ef migrations add Inicial -o Data/Migrations
+
+>dotnet ef database update
+
+>dotnet run
+
+/ProEvento/Front/ProEventos
+>ng server
+
+
+## COMANDOS USADO NO PROJETO
+
+$dotnet new
+
+$dotnet new webapi -n ProEventos.API
+
+$dotnet run
+
+$dotnet tool install --global dotnet-ef
+
+$dotnet ef migrations add Inicial -o Data/Migrations \
+$dotnet ef database update
+## criando uma solucao
+$dotnet new sln -n ProEventos \
+$dotnet new classlib -n ProEventos.Persistence \
+$dotnet new classlib -n ProEventos.Domain \
+$dotnet new classlib -n ProEventos.Application
+
+## add referencias
+$dotnet sln ProEventos.sln \
+$dotnet sln ProEventos.sln add ProEventos.Application \
+$dotnet sln ProEventos.sln add ProEventos.Domain \
+$dotnet sln ProEventos.sln add ProEventos.ProEventos.API \
+$dotnet sln ProEventos.sln add ProEventos.Persistence 
+
+## add as referencias nos projetos
+$dotnet add ProEventos.API/ProEventos.API.csproj reference ProEventos.Application
+
+$dotnet ef migrations add Inicial -p ProEventos.Persistence -s ProEventos.API \
+$dotnet ef database update -s ProEventos.API 
