@@ -1366,7 +1366,7 @@
       "outputPath": "/Users/gilmarborges/Documents/projetos/angular/ProEvento/Back/src/ProEventos.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/gilmarborges/.config/NuGet/NuGet.Config"
+        "/Users/gilmarborges/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1437,7 +1437,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }
