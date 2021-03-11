@@ -57,7 +57,7 @@ namespace ProEventos.Persistence
                 query = query.Include(e => e.PalestrantesEventos).ThenInclude(pe => pe.Palestrante);
             }
 
-            query = query.OrderBy(e => e.Id).Where(e => e.Id == eventoId);
+            query = query.AsNoTracking().OrderBy(e => e.Id).Where(e => e.Id == eventoId);
 
             return await query.FirstOrDefaultAsync();
         }
