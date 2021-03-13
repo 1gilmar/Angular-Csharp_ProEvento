@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<!-- filtro: {{ eventosFiltrador | json }} -->
+<!-- filtro: {{ eventosFiltrados | json }} -->
 
 <!-- table.table.table-striped>(thead.thead-dark>tr>th*8) -->
 <table class="table table-striped">
@@ -21,7 +21,8 @@
     <tr>
       <th>
         <button class="btn btn-outline-success btn-sm" (click)="alterarImagem()">
-          {{!exibirImagem ? "Exibir imagens" : "Ocultar imagens"}}
+          <i class=" {{!exibirImagem ? 'fa fa-eye' : 'fa fa-eye-slash' }} "></i>
+          {{!exibirImagem ? "Exibir" : "Ocultar"}}
         </button>
       </th>
       <th>#</th>
@@ -35,21 +36,22 @@
   </thead>
   <!-- tbody>tr>td*8 -->
   <tbody *ngIf="eventos && eventos.length ">
-    <tr *ngFor="let evento of eventosFiltrador">
+    <tr *ngFor="let evento of eventosFiltrados">
       <td>
         <!-- posso usar o *ngIf ao inves do collapse -->
         <img [collapse]="!exibirImagem" [isAnimated]="true" src="assets/{{evento.imageURL}}"
           [style.width.px]="larguraImagem" [style.margin.px]="margemImagem">
       </td>
-      <td>{{evento.eventoId}}</td>
+      <td>{{evento.id}}</td>
       <td>{{evento.tema}}</td>
       <td>{{evento.local}}</td>
       <td>{{evento.dataEvento}}</td>
       <td>{{evento.qtdPessoas}}</td>
-      <td>{{evento.lote}}</td>
+      <td>{{evento.lotes[0].nome}}</td>
       <td>
-        <button type="button" class="btn btn-primary btn-sm mr-2">editar</button>
-        <button type="button" class="btn btn-danger btn-sm">deletar</button>
+
+        <button type="button" class="btn btn-primary btn-sm mr-2" > <i class="fa fa-edit"></i> editar</button>
+        <button type="button" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i> deletar</button>
       </td>
     </tr>
   </tbody>
