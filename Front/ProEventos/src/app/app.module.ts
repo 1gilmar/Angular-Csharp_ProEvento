@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +16,7 @@ import { PalestrantesComponent } from './palestrantes/palestrantes.component';
 import { NavComponent } from './nav/nav.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { EventoService } from 'src/services/evento.service';
 import { DateTimeFormatePipe } from 'src/helpers/DateTimeFormate.pipe';
@@ -44,8 +45,12 @@ import { DateTimeFormatePipe } from 'src/helpers/DateTimeFormate.pipe';
       preventDuplicates: true,
       progressBar: true,
     }),
+    NgxSpinnerModule,
   ],
-  providers: [EventoService],
-  bootstrap: [AppComponent]
+  providers: [
+    EventoService
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
