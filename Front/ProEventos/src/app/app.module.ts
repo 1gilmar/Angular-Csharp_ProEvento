@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { PalestrantesComponent } from './palestrantes/palestrantes.component';
 import { NavComponent } from './nav/nav.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { EventoService } from 'src/services/evento.service';
 import { DateTimeFormatePipe } from 'src/helpers/DateTimeFormate.pipe';
@@ -34,7 +35,8 @@ import { DateTimeFormatePipe } from 'src/helpers/DateTimeFormate.pipe';
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
     TooltipModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ModalModule.forRoot()
 
   ],
   providers: [EventoService],

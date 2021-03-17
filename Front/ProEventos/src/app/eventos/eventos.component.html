@@ -50,8 +50,13 @@
       <td>{{evento.lotes[0].nome}}</td>
       <td>
 
-        <button type="button" class="btn btn-primary btn-sm mr-2" tooltip="editar" > <i class="fa fa-edit"> </i> editar</button>
-        <button type="button" class="btn btn-danger btn-sm" tooltip="excluir" > <i class="fa fa-trash"></i> deletar</button>
+        <button type="button" class="btn btn-primary btn-sm mr-2" tooltip="editar" > <i class="fa fa-edit">
+           </i> editar
+        </button>
+        <button type="button" class="btn btn-danger btn-sm" tooltip="excluir" (click)="openModal(template)" >
+          <i class="fa fa-trash">
+          </i> deletar
+        </button>
       </td>
     </tr>
   </tbody>
@@ -63,4 +68,15 @@
     </tr>
   </tfoot>
 </table>
+
+<!-- modal -->
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que quer deletar este evento?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
+
 
