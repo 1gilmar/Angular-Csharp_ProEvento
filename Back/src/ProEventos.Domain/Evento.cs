@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-// Um evento pode ter diversos lotes e diversas redes sosiais
+// Um evento pode ter diversos lotes e diversas redes sociais
 namespace ProEventos.Domain
 {
     public class Evento
