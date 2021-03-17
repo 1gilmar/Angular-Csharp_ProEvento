@@ -15,6 +15,7 @@ import { EventosComponent } from './eventos/eventos.component';
 import { PalestrantesComponent } from './palestrantes/palestrantes.component';
 import { NavComponent } from './nav/nav.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ToastrModule } from 'ngx-toastr';
 
 import { EventoService } from 'src/services/evento.service';
 import { DateTimeFormatePipe } from 'src/helpers/DateTimeFormate.pipe';
@@ -36,8 +37,13 @@ import { DateTimeFormatePipe } from 'src/helpers/DateTimeFormate.pipe';
     CollapseModule.forRoot(),
     TooltipModule.forRoot(),
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot()
-
+    ModalModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      progressBar: true,
+    }),
   ],
   providers: [EventoService],
   bootstrap: [AppComponent]
