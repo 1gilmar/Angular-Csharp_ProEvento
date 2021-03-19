@@ -1,4 +1,3 @@
-import { registerLocaleData } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContatosComponent } from './components/contatos/contatos.component';
@@ -7,7 +6,7 @@ import { EventoDetalheComponent } from './components/eventos/evento-detalhe/even
 import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
-import { PerfilComponent } from './components/perfil/perfil.component';
+import { PerfilComponent } from './components/user/perfil/perfil.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { UserComponent } from './components/user/user.component';
@@ -16,8 +15,9 @@ const routes: Routes = [
   {
     path: 'user', component: UserComponent,
     children: [
-      {path: 'login', component: LoginComponent},
-      {path: 'registration', component: RegistrationComponent}
+      { path: 'login', component: LoginComponent },
+      { path: 'registration', component: RegistrationComponent },
+      { path: 'perfil', component: PerfilComponent }
     ]
   },
   { path: 'eventos', redirectTo: '/eventos/listar', pathMatch: 'full' },
@@ -31,7 +31,6 @@ const routes: Routes = [
   },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'palestrantes', component: PalestrantesComponent },
-  { path: 'perfil', component: PerfilComponent },
   { path: 'contatos', component: ContatosComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];
