@@ -18,7 +18,7 @@ namespace ProEventos.Persistence.Contextos
             .HasKey(PE => new {PE.EventoId, PE.PalestranteId});
 
             // um evento tem varias redes sociais, cada rede social tem um evento,
-            // sendo assim quando deletar um evento, delte a redes sociais dele tambem.
+            // sendo assim quando deletar um evento, delete a redes sociais dele tambem.
             modelBuilder.Entity<Evento>()
             .HasMany(e => e.RedesSociais)
             .WithOne(rs => rs.Evento)
