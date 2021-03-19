@@ -1,3 +1,4 @@
+import { registerLocaleData } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContatosComponent } from './components/contatos/contatos.component';
@@ -7,15 +8,25 @@ import { EventoListaComponent } from './components/eventos/evento-lista/evento-l
 import { EventosComponent } from './components/eventos/eventos.component';
 import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
-  {path: 'eventos', redirectTo: '/eventos/listar', pathMatch: 'full'},
+  {
+    path: 'user', component: UserComponent,
+    children: [
+      {path: 'login', component: LoginComponent},
+      {path: 'registration', component: RegistrationComponent}
+    ]
+  },
+  { path: 'eventos', redirectTo: '/eventos/listar', pathMatch: 'full' },
   {
     path: 'eventos', component: EventosComponent,
-    children:[
-      {path: 'detalhe/:id', component: EventoDetalheComponent},
-      {path: 'detalhe', component:EventoDetalheComponent},
-      {path: 'listar', component: EventoListaComponent}
+    children: [
+      { path: 'detalhe/:id', component: EventoDetalheComponent },
+      { path: 'detalhe', component: EventoDetalheComponent },
+      { path: 'listar', component: EventoListaComponent }
     ]
   },
   { path: 'dashboard', component: DashboardComponent },
