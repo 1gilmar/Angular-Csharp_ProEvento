@@ -1,7 +1,9 @@
 <div class="card rounded shadow-sm">
   <form [formGroup]="eventodetalheForm">
     <div class="p-3">
-      
+      <!-- para verificar se o formulario esta sendo preenchido corretamente e ver os campos validos
+        <p>Form value: {{eventodetalheForm.value | json}} </p>
+        <p>Form valid: {{eventodetalheForm.status | json}} </p> -->
       <div class="form-row">
         <div class="form-group col-md-12">
           <label>Tema</label>
@@ -89,11 +91,11 @@
     </div>
     <div class="card-footer">
       <div class="d-flex">
-        <button class="btn btn-outline-secondary mr-auto border">
+        <button class="btn btn-outline-secondary mr-auto border" (click)="resetForm()" >
           Cancelar Alteração
         </button>
-        <button class="btn btn-success">
-          <span class="spinner-border spinner-border-sm mr-1"></span>
+        <button class="btn btn-success" [disabled]="!eventodetalheForm.valid">
+          <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
           Salvar Evento
         </button>
       </div>
