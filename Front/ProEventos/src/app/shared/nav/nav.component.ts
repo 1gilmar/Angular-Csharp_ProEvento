@@ -1,4 +1,4 @@
-import { ThrowStmt } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,9 +12,9 @@ export class NavComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit():void {
+  ngOnInit(): void {
   }
-  showMenu(): boolean{
+  showMenu(): boolean {
     return this.router.url !== '/user/login';
   }
 }

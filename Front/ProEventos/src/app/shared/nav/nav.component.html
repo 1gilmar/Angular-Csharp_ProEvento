@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" *ngIf="showMenu()">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="dashboard">
-      <i class="fa fa-dot-circle mb-2"></i>
+      <em class="fa fa-dot-circle mb-2"></em>
     </a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,9 +11,10 @@
       id="navbarNav">
       <ul class="navbar-nav d-flex mr-auto">
 
-        <li class="nav-item" routerLink="active">
-          <a class="nav-link" aria-current="page" routerLink="eventos">Eventos</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" aria-current="page" routerLink="eventos/listar">Eventos</a>
         </li>
+
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="palestrantes">Palestrantes</a>
         </li>

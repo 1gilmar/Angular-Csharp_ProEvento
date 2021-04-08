@@ -49,7 +49,7 @@
         <td class="d-none d-md-table-cell">{{evento.local}}</td>
         <td>{{evento.dataEvento | DateTimeFormatePip}}</td>
         <td class="d-none d-md-table-cell">{{evento.qtdPessoas}}</td>
-        <td class="d-none d-md-table-cell">{{evento.lotes[0].nome}}</td>
+        <td class="d-none d-md-table-cell">{{evento.lotes[0]?.nome}}</td>
         <td class="d-flex">
           <button type="button" class="d-flex btn btn-danger btn-sm" tooltip="excluir" (click)="openModal(template)">
             <i class="fa fa-trash my-1"> </i>

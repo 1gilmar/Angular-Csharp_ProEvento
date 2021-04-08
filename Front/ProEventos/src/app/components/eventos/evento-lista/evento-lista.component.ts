@@ -55,14 +55,14 @@ export class EventoListaComponent implements OnInit {
 
   public ngOnInit(): void {
     this.spinner.show();
-    this.getEventos();
+    this.carregarEventos();
   }
 
   public alterarImagem(): void {
     this.exibirImagem = !this.exibirImagem;
   }
 
-  public getEventos(): void {
+  public carregarEventos(): void {
     this.eventoService.getEvento().subscribe({
       next: (eventos: Evento[]) => {
         this.eventos = eventos;
@@ -84,6 +84,9 @@ export class EventoListaComponent implements OnInit {
 
   confirm(): void {
     this.modalRef.hide();
+    this.spinner.show();
+    // this.spinner.hide();
+
     this.toastr.success('O evento foi deletado com sucesso.', 'Deletado!');
   }
 
@@ -92,6 +95,6 @@ export class EventoListaComponent implements OnInit {
   }
 
   detalheEvento(id: number): void {
-    this.router.navigate([`/eventos/detalhe/${id}`])
+    this.router.navigate([`/eventos/detalhe/${id}`]);
   }
 }
