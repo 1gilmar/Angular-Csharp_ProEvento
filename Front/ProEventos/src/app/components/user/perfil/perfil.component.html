@@ -124,7 +124,7 @@
             <label>Senha</label>
             <input type="password" class="form-control" formControlName="senha"
             [ngClass]="{'is-invalid': f.senha.errors && f.senha.touched}"/>
-            <div *ngIf="f.senha.errors?.required" class="invalid-feedback">
+            <div *ngIf="f.senha.errors?.nullValidator" class="invalid-feedback">
               Senha é obrigatório.
             </div>
             <div *ngIf="f.senha.errors?.minlength" class="invalid-feedback">
@@ -136,20 +136,20 @@
             <label>Confirmar Senha</label>
             <input type="password" class="form-control" formControlName="confirmeSenha"
             [ngClass]="{'is-invalid': f.confirmeSenha.errors && f.confirmeSenha.touched}"/>
-            <div *ngIf="f.confirmeSenha.errors?.required" class="invalid-feedback">
+            <div *ngIf="f.confirmeSenha.errors?.nullValidator" class="invalid-feedback">
               Confirmar senha é obrigatório.
             </div>
             <div *ngIf="f.confirmeSenha.errors?.mustMatcha" class="invalid-feedback">
               Senha não conferem.
             </div>
-            
+
           </div>
         </div>
       </div>
     </div>
     <div class="card-footer">
       <div class="d-flex">
-        <button class="btn btn-outline-secondary mr-auto border">
+        <button (click)="resetForm($event)" class="btn btn-outline-secondary mr-auto border">
           Cancelar Alteração
         </button>
         <button class="btn btn-success">

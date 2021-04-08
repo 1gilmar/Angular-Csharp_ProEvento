@@ -10,7 +10,7 @@ import { ValidadorField } from 'src/helpers/ValidadorField';
 export class PerfilComponent implements OnInit {
   form!: FormGroup;
 
-  get f(): any{
+  get f(): any {
     return this.form.controls;
   }
 
@@ -22,9 +22,9 @@ export class PerfilComponent implements OnInit {
     this.validation();
   }
 
-  private validation(): void{
+  private validation(): void {
 
-    const formOption: AbstractControlOptions ={
+    const formOption: AbstractControlOptions = {
       validators: ValidadorField.mustMatch('senha', 'confirmeSenha')
     };
 
@@ -34,10 +34,21 @@ export class PerfilComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       telefone: ['', Validators.required],
       descricao: ['', Validators.required],
-      senha: ['', [Validators.required, Validators.minLength(6)]],
-      confirmeSenha: ['', Validators.required],
+      senha: ['', [Validators.nullValidator, Validators.minLength(6)]],
+      confirmeSenha: ['', Validators.nullValidator],
     }, formOption);
 
+  }
+
+  onSubmit(): void {
+    if (this.form.valid) {
+      return;
+    }
+  }
+
+  public resetForm(event: any): void {
+    event.preventDefault();
+    this.form.reset();
   }
 
 }
