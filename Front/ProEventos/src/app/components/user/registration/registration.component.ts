@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit {
 
     const formOptions: AbstractControlOptions = {
       validators: ValidadorField.mustMatch('senha', 'confirmeSenha')
-    }
+    };
 
     this.form = this.fb.group({
       primeiroNome: ['', Validators.required],

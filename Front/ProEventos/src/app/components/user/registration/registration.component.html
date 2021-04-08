@@ -46,7 +46,7 @@
           E-mail é obrigatório
         </div>
         <div *ngIf="f.email.errors ?.email" class="invalid-feedback">
-          E-mail não está no formato correto
+          E-mail está no formato incorreto.
         </div>
 
       </div>
@@ -75,7 +75,7 @@
           <input formControlName="confirmeSenha" class="form-control" type="password"
             [ngClass]="{'is-invalid': f.confirmeSenha.errors && f.confirmeSenha.touched}"
             placeholder="Confirme a Senha" />
-          <div *ngIf="f.confirmeSenha.errors.required" class="invalid-feedback">
+          <div *ngIf="f.confirmeSenha.errors?.required" class="invalid-feedback">
             Confirmar senha é obrigatório.
           </div>
 
