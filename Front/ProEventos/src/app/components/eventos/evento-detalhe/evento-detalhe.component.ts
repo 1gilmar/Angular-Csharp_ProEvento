@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-evento-detalhe',
@@ -28,10 +29,27 @@ export class EventoDetalheComponent implements OnInit {
     return this.eventodetalheForm.controls;
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private localeService: BsLocaleService
+    ) {
+      this.localeService.use('pt-br');
+    }
 
   ngOnInit(): void {
     this.validation();
+  }
+
+  // pode retirar o get porem no html tera de adicionar o [bsConfig]="bsConfig()"
+  // com get a chamada fica assim [bsConfig]="bsConfig"
+  get bsConfig(): any{
+    return {
+      isAnimated: true,
+      adaptivePosition: true,
+      dateInputFormat: 'DD/MM/YYYY hh:mm a',
+      containerClass: 'theme-default',
+      showWeekNumbers: false,
+    };
   }
 
   public validation(): void {
