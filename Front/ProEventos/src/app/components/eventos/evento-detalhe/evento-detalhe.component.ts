@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, RouterEvent } from '@angular/router';
+
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
+
+import { EventoService } from 'src/services/evento.service';
+import { Evento } from 'src/models/Evento';
 
 @Component({
   selector: 'app-evento-detalhe',
@@ -11,6 +18,8 @@ export class EventoDetalheComponent implements OnInit {
 
   // form: FormGroup;
   // form = {} as FormGroup;
+
+  evento = {} as Evento;
 
   eventodetalheForm!: FormGroup;
 
@@ -31,12 +40,17 @@ export class EventoDetalheComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private localeService: BsLocaleService
-    ) {
-      this.localeService.use('pt-br');
-    }
+    private localeService: BsLocaleService,
+    private router: ActivatedRoute,
+    private eventoService: EventoService,
+    private spinner: NgxSpinnerService,
+    private toast: ToastrService
+  ) {
+    this.localeService.use('pt-br');
+  }
 
   ngOnInit(): void {
+    this.carregarEvento();
     this.validation();
   }
 
@@ -50,6 +64,28 @@ export class EventoDetalheComponent implements OnInit {
       containerClass: 'theme-default',
       showWeekNumbers: false,
     };
+  }
+
+  public carregarEvento(): void {
+    const eventoIdParam = this.router.snapshot.paramMap.get('id');
+
+    if (eventoIdParam !== null) {
+      this.spinner.show();
+      //adicionado o + para converter a string em numero.
+      this.eventoService.getEventoById(+eventoIdParam).subscribe(
+        (evento: Evento) => {
+          this.evento = { ...evento };
+          this.eventodetalheForm.patchValue(this.evento);
+        },
+        (error: any) => {
+          this.spinner.hide();
+          console.log(error);
+          this.toast.error("Erro ao tentar carregar evento.");
+        },
+        () => { this.spinner.hide(); },
+      );
+    }
+
   }
 
   public validation(): void {
