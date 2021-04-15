@@ -38,6 +38,7 @@
           <input type="datetime" class="form-control"
             [ngClass]= "cssValidator(f.dataEvento)"
             formControlName="dataEvento" placeholder=""
+            value="{{evento.dataEvento | DateTimeFormatePip}}"
             bsDatepicker
             [bsConfig]="bsConfig">
           <div *ngIf="f.dataEvento.errors ?.required" class="invalid-feedback">
