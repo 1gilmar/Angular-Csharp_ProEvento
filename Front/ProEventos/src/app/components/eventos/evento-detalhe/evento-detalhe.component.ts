@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, RouterEvent } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { ToastrService } from 'ngx-toastr';
@@ -71,7 +71,7 @@ export class EventoDetalheComponent implements OnInit {
 
     if (eventoIdParam !== null) {
       this.spinner.show();
-      //adicionado o + para converter a string em numero.
+      // adicionado o + para converter a string em numero.
       this.eventoService.getEventoById(+eventoIdParam).subscribe(
         (evento: Evento) => {
           this.evento = { ...evento };
@@ -80,7 +80,7 @@ export class EventoDetalheComponent implements OnInit {
         (error: any) => {
           this.spinner.hide();
           console.log(error);
-          this.toast.error("Erro ao tentar carregar evento.");
+          this.toast.error('Erro ao tentar carregar evento.');
         },
         () => { this.spinner.hide(); },
       );
