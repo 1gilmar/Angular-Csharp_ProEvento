@@ -56,7 +56,7 @@ export class EventoDetalheComponent implements OnInit {
 
   // pode retirar o get porem no html tera de adicionar o [bsConfig]="bsConfig()"
   // com get a chamada fica assim [bsConfig]="bsConfig"
-  get bsConfig(): any{
+  get bsConfig(): any {
     return {
       isAnimated: true,
       adaptivePosition: true,
@@ -100,12 +100,12 @@ export class EventoDetalheComponent implements OnInit {
     });
   }
 
-  public resetForm(): void{
+  public resetForm(): void {
     this.eventodetalheForm.reset();
   }
 
   public cssValidator(campoForm: FormControl): any {
-    return {'is-invalid': campoForm.errors && campoForm.touched};
+    return { 'is-invalid': campoForm.errors && campoForm.touched };
   }
 
 }
