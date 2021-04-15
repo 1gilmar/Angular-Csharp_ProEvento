@@ -19,12 +19,15 @@ export class EventoListaComponent implements OnInit {
 
   public eventos: Evento[] = [];
   public eventosFiltrados: Evento[] = [];
+  public eventoId = 0;
+
   /* tamanho da imagem
   larguraImagem: number = 150 */
   public larguraImagem = 150;
   public margemImagem = 2;
   public exibirImagem = true;
   private filtroListado = '';
+
 
   // public get filtroLista(): string{
   public get filtroLista(): string {
@@ -78,16 +81,19 @@ export class EventoListaComponent implements OnInit {
     });
   }
 
-  openModal(template: TemplateRef<any>): void {
+  openModal(event: any, template: TemplateRef<any>, eventoId: number): void {
+    event.stopPropagation();
+    this.eventoId = eventoId;
     this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
   }
 
   confirm(): void {
     this.modalRef.hide();
     this.spinner.show();
-    // this.spinner.hide();
+    this.spinner.hide();
 
     this.toastr.success('O evento foi deletado com sucesso.', 'Deletado!');
+
   }
 
   decline(): void {
